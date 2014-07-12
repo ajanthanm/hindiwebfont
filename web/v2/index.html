@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Google Hindi Font Tests</title>
+		<meta charset="utf-8"/>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/favicon.ico" type="image/x-icon">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="http://fonts-dev.sandbox.google.com/fonts/AB37A8A57055EBAC5484AB5C00495FC1.cache.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Rajdhani|Teko:300|Noto+Sans|Ek+Mukta:300|Kalam|Karma|Hind&subset=latin,devanagari' rel='stylesheet' type='text/css'>
+		<link href="style.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+		</style>
+		<script type="text/javascript">
+		var scrolled_val = 0;
+		function pageLoad()
+		{
+			var nVer = navigator.appVersion;
+			var nAgt = navigator.userAgent;
+			var browserName  = navigator.appName;
+			var fullVersion  = ''+parseFloat(navigator.appVersion); 
+			var majorVersion = parseInt(navigator.appVersion,10);
+			var nameOffset,verOffset,ix;
+
+			// In Opera, the true version is after "Opera" or after "Version"
+			if ((verOffset=nAgt.indexOf("Opera"))!=-1) {
+			 browserName = "Opera";
+			 fullVersion = nAgt.substring(verOffset+6);
+			 if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+			   fullVersion = nAgt.substring(verOffset+8);
+			}
+			// In MSIE, the true version is after "MSIE" in userAgent
+			else if ((verOffset=nAgt.indexOf("MSIE"))!=-1) {
+			 browserName = "Microsoft Internet Explorer";
+			 fullVersion = nAgt.substring(verOffset+5);
+			}
+			// In Chrome, the true version is after "Chrome" 
+			else if ((verOffset=nAgt.indexOf("Chrome"))!=-1) {
+			 browserName = "Chrome";
+			 fullVersion = nAgt.substring(verOffset+7);
+			}
+			// In Safari, the true version is after "Safari" or after "Version" 
+			else if ((verOffset=nAgt.indexOf("Safari"))!=-1) {
+			 browserName = "Safari";
+			 fullVersion = nAgt.substring(verOffset+7);
+			 if ((verOffset=nAgt.indexOf("Version"))!=-1) 
+			   fullVersion = nAgt.substring(verOffset+8);
+			}
+			// In Firefox, the true version is after "Firefox" 
+			else if ((verOffset=nAgt.indexOf("Firefox"))!=-1) {
+			 browserName = "Firefox";
+			 fullVersion = nAgt.substring(verOffset+8);
+			}
+			// In most other browsers, "name/version" is at the end of userAgent 
+			else if ( (nameOffset=nAgt.lastIndexOf(' ')+1) < 
+			          (verOffset=nAgt.lastIndexOf('/')) ) 
+			{
+			 browserName = nAgt.substring(nameOffset,verOffset);
+			 fullVersion = nAgt.substring(verOffset+1);
+			 if (browserName.toLowerCase()==browserName.toUpperCase()) {
+			  browserName = navigator.appName;
+			 }
+			}
+			// trim the fullVersion string at semicolon/space if present
+			if ((ix=fullVersion.indexOf(";"))!=-1)
+			   fullVersion=fullVersion.substring(0,ix);
+			if ((ix=fullVersion.indexOf(" "))!=-1)
+			   fullVersion=fullVersion.substring(0,ix);
+
+			majorVersion = parseInt(''+fullVersion,10);
+			if (isNaN(majorVersion)) {
+			 fullVersion  = ''+parseFloat(navigator.appVersion); 
+			 majorVersion = parseInt(navigator.appVersion,10);
+			}
+
+			/*document.write(''
+			 +'Browser name  = '+browserName+'<br>'
+			 +'Full version  = '+fullVersion+'<br>'
+			 +'Major version = '+majorVersion+'<br>'
+			 +'navigator.appName = '+navigator.appName+'<br>'
+			 +'navigator.userAgent = '+navigator.userAgent+'<br>'
+			)*/
+			var OSName="Unknown OS";
+			if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+			if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+			if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+			if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+			//document.getElementById("entry_1467183824").value = ""+OSName+" "+browserName+" "+fullVersion;
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ 				document.getElementById("mobrightclick").style.display = "block";
+				document.getElementById("reportbox").className = "MobReportBox";
+				document.getElementById("entry_1467183824").value = "";
+			}
+		}
+		var entry = "";
+		function nah()
+		{
+			$.ajax ({
+				url:"https://spreadsheets.google.com/feeds/cells/1qSk_BXLMSIOJqfUE7s-x5CbQwdy3v3eCqL4ywZPB69I/2/public/basic?alt=json-in-script",
+				type: "GET",
+				dataType:"xml",
+				success: function(data)
+				{
+					console.log(data['$t'])
+				},
+				error: function (err)
+				{
+					var r = String(err.responseText);
+					r = r.substr(0, r.length-2); 
+					r = r.substr(28);
+					r = JSON.parse(r);
+					entry = (r.feed.entry[0].content.$t);
+					passCheck();
+				}
+			});
+		}
+		function passCheck()
+		{
+			if(true)
+			{
+				document.getElementById("prot").style.display= "none";
+			}
+			var el = document.getElementsByClassName("section");
+			for (var i = el.length - 1; i > 0; i--) {
+				el[i].getElementsByClassName("text")[0].innerHTML = entry;
+			};
+		}
+		var selectedtxt = "";
+		function getSelectionHtml() {
+		    var html = "";
+		    if (typeof window.getSelection != "undefined") {
+		        var sel = window.getSelection();
+		        if (sel.rangeCount) {
+		            var container = document.createElement("div");
+		            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+		                container.appendChild(sel.getRangeAt(i).cloneContents());
+		            }
+		            html = container.innerHTML;
+		        }
+		    } else if (typeof document.selection != "undefined") {
+		        if (document.selection.type == "Text") {
+		            html = document.selection.createRange().htmlText;
+		        }
+		    }
+		    selectedtxt = html;
+		}
+		if( !(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) ) {
+		
+		var keys = [37, 38, 39, 40];
+
+		function preventDefault(e) {
+		  e = e || window.event;
+		  if (e.preventDefault)
+		      e.preventDefault();
+		  e.returnValue = false;  
+		}
+
+		function keydown(e) {
+		    for (var i = keys.length; i--;) {
+		        if (e.keyCode === keys[i]) {
+		            preventDefault(e);
+		            return;
+		        }
+		    }
+		}
+
+		function wheel(e) {
+		  preventDefault(e);
+		}
+
+		function disable_scroll() {
+		  if (window.addEventListener) {
+		      window.addEventListener('DOMMouseScroll', wheel, false);
+		  }
+		  window.onmousewheel = document.onmousewheel = wheel;
+		  document.onkeydown = keydown;
+		}
+
+		function enable_scroll() {
+		    if (window.removeEventListener) {
+		        window.removeEventListener('DOMMouseScroll', wheel, false);
+		    }
+		    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+		}		
+		function hideContextMenu()
+		{
+			document.getElementById("contextmenu").style.display = "none";
+			enable_scroll();
+		}
+		if (document.addEventListener) {
+        	document.addEventListener('contextmenu', function(e) {
+            	//alert("You've tried to open context menu"); //here you draw your own menu
+            	var cX = (window.Event) ? e.pageX : event.clientX + (document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft);
+				var cY = (window.Event) ? e.pageY : event.clientY + (document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop);
+				document.getElementsByClassName("menu")[0].style.top= cY + "px";
+				document.getElementsByClassName("menu")[0].style.left= cX + "px";
+            	document.getElementById("contextmenu").style.display = "block";
+            	getSelectionHtml();
+            	disable_scroll();
+            	e.preventDefault();
+        	}, false);
+    	} else {
+        	document.attachEvent('oncontextmenu', function() {
+            	alert("You've tried to open context menu");
+            	window.event.returnValue = false;
+        	});
+    	}
+    	}
+    	function reportbug()
+    	{
+    		//alert(selectedtxt);
+    		document.getElementById("reportbox").style.top = scrolled_val+"px";
+    		document.getElementById("entry_750643813").value = selectedtxt;
+    		document.getElementById("entry_987646626").value = "bug";
+    		document.getElementById("reportbox").style.display = "block";
+    	}
+    	function suggestion()
+    	{
+    		document.getElementById("entry_750643813").value = selectedtxt;
+    		document.getElementById("entry_987646626").value = "Suggestion";
+    		document.getElementById("reportbox").style.display = "block";
+    	}
+    	function closeReport()
+    	{
+
+    		document.getElementById("reportbox").style.display = "none";
+    	}
+    	$(window).scroll( function() { 
+    		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	 	scrolled_val = $(document).scrollTop().valueOf();
+	 	}
+	});
+    	function fontChange(clname, ele)
+    	{
+    		var liem = document.getElementsByTagName("li");
+    		for (var i = liem.length - 1; i >= 0; i--) {
+    			liem[i].className = "";
+    		};
+    		ele.className = "active";
+    		var el= document.getElementsByClassName("section");
+    		for (var i = el.length - 1; i > 1; i--) {
+    			el[i].className = clname+ " section";
+    		};
+    	}
+		</script>
+	</head>
+	<body onload="pageLoad(); nah();">
+		<div class="section title" >
+			Google Hind Web fonts
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="active" onclick="fontChange('ekmukta', this);">Ek Mukta</li>
+				<li onclick="fontChange('notosans', this);">Noto Sans</li>
+				<li onclick="fontChange('teko', this);">Teko</li>
+				<li onclick="fontChange('hind', this);">Hind</li>
+				<li onclick="fontChange('karma', this);">Karma</li>
+				<li onclick="fontChange('kalam', this);">Kalam</li>
+				<li onclick="fontChange('rajdhani', this);">Rajdhani</li>
+			</ul>
+		</div>
+		<div class="heading section" title="green1"><span>Ek Mukta</span></div>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H1</span>
+			<h1 class="text"></h1>
+		</div>
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H2</span>
+			<h2 class="text"></h2>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H3</span>
+			<h3 class="text"></h3>
+		</div>
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H4</span>
+			<h4 class="text"></h4>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H5</span>
+			<h5 class="text"></h5>
+		</div>
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H6</span>
+			<h6 class="text"></h6>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">Paragraph</span>
+			<p class="text"></p>
+		</div>
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">Small</span>
+			<small class="text"></small>
+		</div>
+		<div class="prot" id="prot" style="display:none">
+			<input type="password" placeholder="Please enter your password" onchange="passCheck(this);" />
+		</div>
+		<div class="mob-rightclick" id="mobrightclick" onclick="reportbug();">report bug</div>
+		<div class="reportbox" id="reportbox">
+			<div class="head">Report a Bug / Suggestion</div>
+			<div class="form">
+				<form id="ss-form" target="hiddeniframe" method="POST" action="https://docs.google.com/forms/d/1zkTfoEAo_crBxoR_CXhne5nd3ySh58FPt-9xuwLkkDA/formResponse">
+					<div>
+						<label>Tester Name</label>
+						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Enter your Name"  />
+					</div>
+					<div>
+						<label>OS and Platform</label>
+						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="Which OS and which Device?"/>
+					</div>
+					<div>
+						<label>Font Name</label>
+						<select id="entry_1700713492" name="entry.1700713492">
+							<option value="">Font Name</option>
+							<option value="Ek Mukta">Ek Mukta</option>
+							<option value="Noto Sans">Noto Sans</option>
+							<option value="Hind">Hind</option>
+							<option value="Teko">Teko</option>
+							<option value="Karma">Karma</option>
+							<option value="Kalam">Kalam</option>
+							<option value="Rajdhani">Rajdhani</option>
+						</select>
+					</div>
+					<div>
+						<label>Bug or Suggestion</label>
+						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug or Suggestion"/>
+					</div>
+					<div>
+						<label>Reporting Text</label>
+						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Reporting Text" />
+					</div>
+					<div>
+						<label>Message</label>
+						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Message" />
+					</div>
+					<div>
+						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for Submiting the Report');" name="submit"/>
+						<div onclick="closeReport();" class="closebutton">Close</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="contextmenu" id="contextmenu">
+			<div class="wrapper" id="cwrapper" onclick="hideContextMenu();"></div>
+			<div class="menu">
+				<a onclick="hideContextMenu(); reportbug();">Report Bug</a><hr>
+				<a onclick="hideContextMenu(); suggestion();">Suggestion</a><hr>
+				<a onclick="hideContextMenu();">close</a>
+			</div>
+		</div>
+		<iframe src="" id="hiddeniframe" name="hiddeniframe"></iframe>
+	</body>
+</html>
