@@ -237,6 +237,8 @@
     			liem[i].className = "";
     		};
     		ele.className = "active";
+    		var fontName = ele.innerHTML;
+    		document.getElementsByClassName("heading")[0].innerHTML = fontName;
     		var el= document.getElementsByClassName("section");
     		for (var i = el.length - 1; i > 1; i--) {
     			el[i].className = clname+ " section";
