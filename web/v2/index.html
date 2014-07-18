@@ -263,37 +263,29 @@
 				<li onclick="fontChange('vesper', this)">Vesper Libre</li>
 			</ul>
 		</div>
-		<div class="heading section" title="green1"><span>Ek Mukta</span></div>
+		<div class="heading section" title="green2"><span>Ek Mukta</span></div>
 		<div class="ekmukta section" title="green2">
-			<span class="ekmukta">H1</span>
 			<h1 class="text"></h1>
 		</div>
-		<div class="ekmukta section" title="green3">
-			<span class="ekmukta">H2</span>
+		<div class="ekmukta section" title="green2">
 			<h2 class="text"></h2>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<span class="ekmukta">H3</span>
 			<h3 class="text"></h3>
 		</div>
-		<div class="ekmukta section" title="green3">
-			<span class="ekmukta">H4</span>
+		<div class="ekmukta section" title="green2">
 			<h4 class="text"></h4>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<span class="ekmukta">H5</span>
 			<h5 class="text"></h5>
 		</div>
-		<div class="ekmukta section" title="green3">
-			<span class="ekmukta">H6</span>
+		<div class="ekmukta section" title="green2">
 			<h6 class="text"></h6>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<span class="ekmukta">Paragraph</span>
 			<p class="text"></p>
 		</div>
-		<div class="ekmukta section" title="green3">
-			<span class="ekmukta">Small</span>
+		<div class="ekmukta section" title="green2">
 			<small class="text"></small>
 		</div>
 		<div class="prot" id="prot" style="display:none">
@@ -301,19 +293,19 @@
 		</div>
 		<div class="mob-rightclick" id="mobrightclick" onclick="reportbug();">report bug</div>
 		<div class="reportbox" id="reportbox">
-			<div class="head">Report a Bug / Suggestion</div>
+			<div class="head">Report a Bug or Suggestion</div>
 			<div class="form">
 				<form id="ss-form" target="hiddeniframe" method="POST" action="https://docs.google.com/forms/d/1zkTfoEAo_crBxoR_CXhne5nd3ySh58FPt-9xuwLkkDA/formResponse">
 					<div>
-						<label>Tester Name</label>
-						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Enter your Name"  />
+						<label>Your Name:</label>
+						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Anonymous"  />
 					</div>
 					<div>
-						<label>OS and Platform</label>
-						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="Which OS and which Device?"/>
+						<label>System and Browser:</label>
+						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="What kind of computer are you using?"/>
 					</div>
 					<div>
-						<label>Font Name</label>
+						<label>Font Name:</label>
 						<select id="entry_1700713492" name="entry.1700713492">
 							<option value="">Font Name</option>
 							<option value="Ek Mukta">Ek Mukta</option>
@@ -328,16 +320,16 @@
 						</select>
 					</div>
 					<div>
-						<label>Bug or Suggestion</label>
-						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug or Suggestion"/>
+						<label>Bug or Suggestion:</label>
+						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug"/>
 					</div>
 					<div>
-						<label>Reporting Text</label>
-						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Reporting Text" />
+						<label>Example Text:</label>
+						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Example Text" />
 					</div>
 					<div>
-						<label>Message</label>
-						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Message" />
+						<label>Describe what is wrong, exactly:</label>
+						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Example: I think the letter M is too wide" />
 					</div>
 					<div>
 						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for helping!');" name="submit"/>
