@@ -10,7 +10,8 @@
 		div.section {
 			width: auto;
 			padding: 5% 10%; 
-			line-height: 200%;
+			font-size: 3em;
+			line-height: 1.5em;
 			text-align: justify;
 		}
 		.green1 
