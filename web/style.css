@@ -97,6 +97,9 @@ div.section {
 	color: #ffffff;
 	font-family: 'Roboto', 'sans-serif';
 }
+.title h1 {
+	margin-bottom: 0.5em;
+}
 
 .prot {
 	position: fixed;
