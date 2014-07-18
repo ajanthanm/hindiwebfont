@@ -74,6 +74,12 @@
 		.rajdhani {
 			font-family: 'Rajdhani', sans-serif !important;
 		}
+		.khand {
+			font-family: 'Khand', sans-serif;
+		}
+		.vesper {
+			font-family: 'Vesper Libre', serif;
+		}
 		.section span {
 			display: block;
 			font-weight: 100;
