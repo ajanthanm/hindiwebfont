@@ -56,6 +56,12 @@
 		.rajdhani {
 			font-family: 'Rajdhani', sans-serif;
 		}
+		.khand {
+			font-family: 'Khand', sans-serif;
+		}
+		.vesper {
+			font-family: 'Vesper Libre', serif;
+		}
 		.section span {
 			display: block;
 			font-family: 'Roboto', 'sans-serif';
