@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 	<head>
-        <link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,500,600,300|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900|Kalam:400,300,700&amp;subset=latin,devanagari' rel='stylesheet' type='text/css'>
-		<title>Test Google Hindi Fonts</title>
+		<title>Google Hindi Font Tests</title>
 		<meta charset="utf-8"/>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="http://fonts-dev.sandbox.google.com/fonts/AB37A8A57055EBAC5484AB5C00495FC1.cache.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Khand|Vesper+Libre|Rajdhani|Teko:300|Noto+Sans|Ek+Mukta:300|Kalam|Karma|Hind&subset=latin,devanagari' rel='stylesheet' type='text/css'>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
@@ -85,7 +85,7 @@
 			if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
 			if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
 			if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
-			document.getElementById("entry_1467183824").value = ""+OSName+" "+browserName+" "+fullVersion;
+			//document.getElementById("entry_1467183824").value = ""+OSName+" "+browserName+" "+fullVersion;
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
  				document.getElementById("mobrightclick").style.display = "block";
 				document.getElementById("reportbox").className = "MobReportBox";
@@ -122,7 +122,7 @@
 			}
 			var el = document.getElementsByClassName("section");
 			for (var i = el.length - 1; i > 0; i--) {
-				el[i].innerHTML += entry;
+				el[i].getElementsByClassName("text")[0].innerHTML = entry;
 			};
 		}
 		var selectedtxt = "";
@@ -230,47 +230,72 @@
 	 	scrolled_val = $(document).scrollTop().valueOf();
 	 	}
 	});
-
+    	function fontChange(clname, ele)
+    	{
+    		var liem = document.getElementsByTagName("li");
+    		for (var i = liem.length - 1; i >= 0; i--) {
+    			liem[i].className = "";
+    		};
+    		ele.className = "active";
+    		var fontName = ele.innerHTML;
+    		document.getElementsByClassName("heading")[0].innerHTML = fontName;
+    		var el= document.getElementsByClassName("section");
+    		for (var i = el.length - 1; i > 1; i--) {
+    			el[i].className = clname+ " section";
+    		};
+    	}
 		</script>
 	</head>
 	<body onload="pageLoad(); nah();">
 		<div class="section title" >
 			Google Hindi Web fonts
 		</div>
-		<div class="ekmukta section green1">
-			<span>Ek Mukta</span>
-			
+		<div class="nav">
+			<ul>
+				<li class="active" onclick="fontChange('ekmukta', this);">Ek Mukta</li>
+				<li onclick="fontChange('notosans', this);">Noto Sans</li>
+				<li onclick="fontChange('teko', this);">Teko</li>
+				<li onclick="fontChange('hind', this);">Hind</li>
+				<li onclick="fontChange('karma', this);">Karma</li>
+				<li onclick="fontChange('kalam', this);">Kalam</li>
+				<li onclick="fontChange('rajdhani', this);">Rajdhani</li>
+				<li onclick="fontChange('khand', this);">Khand</li>
+				<li onclick="fontChange('vesper', this)">Vesper Libre</li>
+			</ul>
 		</div>
-		<div class="notosans section green2">
-			<span>Noto Sans</span>
-
+		<div class="heading section" title="green1"><span>Ek Mukta</span></div>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H1</span>
+			<h1 class="text"></h1>
 		</div>
-		<div class="teko section green3">
-			<span>Teko</span>
-
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H2</span>
+			<h2 class="text"></h2>
 		</div>
-		<div class="hind section green2">
-			<span>Hind</span>
-			
-
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H3</span>
+			<h3 class="text"></h3>
 		</div>
-		<div class="karma section green3">
-			<span>Karma</span>
-			
-
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H4</span>
+			<h4 class="text"></h4>
 		</div>
-		<div class="kalam section green2">
-			<span>Kalam</span>
-
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">H5</span>
+			<h5 class="text"></h5>
 		</div>
-		<div class="rajdhani section green3">
-			<span>Rajdhani</span>
-
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">H6</span>
+			<h6 class="text"></h6>
 		</div>
-		<div class="section green2 khand">
-			<span>Khand</span>
+		<div class="ekmukta section" title="green2">
+			<span class="ekmukta">Paragraph</span>
+			<p class="text"></p>
 		</div>
-		<div class="section green3 vesper"></div>
+		<div class="ekmukta section" title="green3">
+			<span class="ekmukta">Small</span>
+			<small class="text"></small>
+		</div>
 		<div class="prot" id="prot" style="display:none">
 			<input type="password" placeholder="Please enter your password" onchange="passCheck(this);" />
 		</div>
