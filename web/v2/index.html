@@ -6,8 +6,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script type="text/javascript" src="http://fonts-dev.sandbox.google.com/fonts/AB37A8A57055EBAC5484AB5C00495FC1.cache.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Khand|Vesper+Libre|Rajdhani|Teko:300|Noto+Sans|Ek+Mukta:300|Kalam|Karma|Hind&subset=latin,devanagari' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,300,500,600,700|Kalam:400,300,700|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900&subset=latin,devanagari' rel='stylesheet' type='text/css'>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
@@ -237,8 +236,6 @@
     			liem[i].className = "";
     		};
     		ele.className = "active";
-    		var fontName = ele.innerHTML;
-    		document.getElementsByClassName("heading")[0].innerHTML = fontName;
     		var el= document.getElementsByClassName("section");
     		for (var i = el.length - 1; i > 1; i--) {
     			el[i].className = clname+ " section";
@@ -248,7 +245,7 @@
 	</head>
 	<body onload="pageLoad(); nah();">
 		<div class="section title" >
-			Google Hindi Web fonts
+			Google Hind Web fonts
 		</div>
 		<div class="nav">
 			<ul>
@@ -259,53 +256,75 @@
 				<li onclick="fontChange('karma', this);">Karma</li>
 				<li onclick="fontChange('kalam', this);">Kalam</li>
 				<li onclick="fontChange('rajdhani', this);">Rajdhani</li>
-				<li onclick="fontChange('khand', this);">Khand</li>
-				<li onclick="fontChange('vesper', this)">Vesper Libre</li>
 			</ul>
 		</div>
-		<div class="heading section" title="green2"><span>Ek Mukta</span></div>
+		<div class="heading section" title="green1"><span>Ek Mukta</span></div>
 		<div class="ekmukta section" title="green2">
-			<h1 class="text"></h1>
+			<span class="ekmukta">Display 4</span>
+			<p class="text" style="font-size:700%; line-height:150%;" ></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<h2 class="text"></h2>
+			<span class="ekmukta">Display 3</span>
+			<p class="text" style="font-size:400%; line-height:200%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<h3 class="text"></h3>
+			<span class="ekmukta">Display 2</span>
+			<p class="text" style="font-size:300%; line-height:200%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<h4 class="text"></h4>
+			<span class="ekmukta">Display 1</span>
+			<p class="text" style="font-size:250%; line-height:200%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<h5 class="text"></h5>
+			<span class="ekmukta">Headline</span>
+			<p class="text" style="font-size:200%; line-height:200%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<h6 class="text"></h6>
+			<span class="ekmukta">Title</span>
+			<p class="text" style="font-size:150%; font-weight:500; line-height:150%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<p class="text"></p>
+			<span class="ekmukta">Subhead</span>
+			<p class="text" style="font-size:140%; font-weight:300; line-height:150%;"></p>
 		</div>
 		<div class="ekmukta section" title="green2">
-			<small class="text"></small>
+			<span class="ekmukta">Body 2</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span>Body 1</span>
+			<p class="text" style="font-size:100%; font-weight:300; line-height:150%;"></p>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span>Caption</span>
+			<p class="text" style="font-size:80%; font-weight:300; line-height:150%;"></p>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span>Menu</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+		</div>
+		<div class="ekmukta section" title="green2">
+			<span>Button</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
 		<div class="prot" id="prot" style="display:none">
 			<input type="password" placeholder="Please enter your password" onchange="passCheck(this);" />
 		</div>
 		<div class="mob-rightclick" id="mobrightclick" onclick="reportbug();">report bug</div>
 		<div class="reportbox" id="reportbox">
-			<div class="head">Report a Bug or Suggestion</div>
+			<div class="head">Report a Bug / Suggestion</div>
 			<div class="form">
 				<form id="ss-form" target="hiddeniframe" method="POST" action="https://docs.google.com/forms/d/1zkTfoEAo_crBxoR_CXhne5nd3ySh58FPt-9xuwLkkDA/formResponse">
 					<div>
-						<label>Your Name:</label>
-						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Anonymous"  />
+						<label>Tester Name</label>
+						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Enter your Name"  />
 					</div>
 					<div>
-						<label>System and Browser:</label>
-						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="What kind of computer are you using?"/>
+						<label>OS and Platform</label>
+						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="Which OS and which Device?"/>
 					</div>
 					<div>
-						<label>Font Name:</label>
+						<label>Font Name</label>
 						<select id="entry_1700713492" name="entry.1700713492">
 							<option value="">Font Name</option>
 							<option value="Ek Mukta">Ek Mukta</option>
@@ -315,24 +334,22 @@
 							<option value="Karma">Karma</option>
 							<option value="Kalam">Kalam</option>
 							<option value="Rajdhani">Rajdhani</option>
-							<option value="Khand">Khand</option>
-							<option value="Vesper Libre">Vesper Libre</option>
 						</select>
 					</div>
 					<div>
-						<label>Bug or Suggestion:</label>
-						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug"/>
+						<label>Bug or Suggestion</label>
+						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug or Suggestion"/>
 					</div>
 					<div>
-						<label>Example Text:</label>
-						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Example Text" />
+						<label>Reporting Text</label>
+						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Reporting Text" />
 					</div>
 					<div>
-						<label>Describe what is wrong, exactly:</label>
-						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Example: I think the letter M is too wide" />
+						<label>Message</label>
+						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Message" />
 					</div>
 					<div>
-						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for helping!');" name="submit"/>
+						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for Submiting the Report');" name="submit"/>
 						<div onclick="closeReport();" class="closebutton">Close</div>
 					</div>
 				</form>
@@ -341,9 +358,9 @@
 		<div class="contextmenu" id="contextmenu">
 			<div class="wrapper" id="cwrapper" onclick="hideContextMenu();"></div>
 			<div class="menu">
-				<a onclick="hideContextMenu(); reportbug();">Bug</a><hr>
+				<a onclick="hideContextMenu(); reportbug();">Report Bug</a><hr>
 				<a onclick="hideContextMenu(); suggestion();">Suggestion</a><hr>
-				<a onclick="hideContextMenu();">Cancel</a>
+				<a onclick="hideContextMenu();">close</a>
 			</div>
 		</div>
 		<iframe src="" id="hiddeniframe" name="hiddeniframe"></iframe>
