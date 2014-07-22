@@ -11,7 +11,6 @@
 			width: auto;
 			padding: 5% 10%; 
 			line-height: 200%;
-			text-align: justify;
 		}
 		div.nav {
 			background:white;
@@ -212,7 +211,7 @@
 			display:inline-block;
 			font-size:2em;
 			padding:1em;
-			width:60%;
+			width:50%;
 		}
 		.MobReportBox textarea {
 			box-sizing:border-box;
