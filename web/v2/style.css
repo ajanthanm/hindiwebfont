@@ -13,6 +13,17 @@
 			line-height: 200%;
 			text-align: justify;
 		}
+		div.nav {
+			background:white;
+			box-shadow: 0 0 10px;
+		}
+		div.navfixed {
+			position: fixed;
+			top:0;
+			width: 100%;
+			background:white;
+			box-shadow: 0 0 10px;
+		}
 		div.nav ul {
 			list-style: none;
 		}
@@ -52,33 +63,6 @@
 		div.section[title="green5"] {
 			background: #4CB8CC;
 			color: black;
-		}
-		.ekmukta {
-			font-family: 'Ek Mukta', 'sans-serif' !important;
-		}
-		.notosans {
-			font-family: 'Noto Sans', 'sans-serif' !important;
-		}
-		.teko {
-			font-family: 'Teko', 'sans-serif' !important;
-		}
-		.hind {
-			font-family: 'Hind', 'sans-serif' !important;
-		}
-		.karma {
-			font-family: 'Karma', 'serif' !important;
-		}
-		.kalam {
-			font-family: 'Kalam', cursive !important;
-		}
-		.rajdhani {
-			font-family: 'Rajdhani', sans-serif !important;
-		}
-		.khand {
-			font-family: 'Khand', sans-serif;
-		}
-		.vesper {
-			font-family: 'Vesper Libre', serif;
 		}
 		.section span {
 			display: block;

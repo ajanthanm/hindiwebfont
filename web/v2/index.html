@@ -1,7 +1,6 @@
 <!doctype html>
 <html>
 	<head>
-		<link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,300,500,600,700|Kalam:400,300,700|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900&subset=latin,devanagari' rel='stylesheet' type='text/css'>
 		<title>Test Google Hindi Fonts</title>
 		<meta charset="utf-8"/>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -10,8 +9,12 @@
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
+		<script type="text/javascript" src="master.js"></script>
 		<script type="text/javascript">
 		var scrolled_val = 0;
+		var scrlval =0;
+		var navinit = 0;
+		var offset;
 		function pageLoad()
 		{
 			var nVer = navigator.appVersion;
@@ -94,6 +97,7 @@
 		var entry = "";
 		function nah()
 		{
+			loadFont();
 			$.ajax ({
 				url:"https://spreadsheets.google.com/feeds/cells/1qSk_BXLMSIOJqfUE7s-x5CbQwdy3v3eCqL4ywZPB69I/2/public/basic?alt=json-in-script",
 				type: "GET",
@@ -225,86 +229,76 @@
     		document.getElementById("reportbox").style.display = "none";
     	}
     	$(window).scroll( function() { 
+    		scrlval = $(document).scrollTop().valueOf();
+    		if(scrlval >= offset.top)
+    		{
+    			$("#nav").addClass("navfixed");
+    		}
+    		else
+    		{
+    			$("#nav").removeClass("navfixed");
+    		}
     		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	 	scrolled_val = $(document).scrollTop().valueOf();
+	 		scrolled_val = $(document).scrollTop().valueOf();
 	 	}
 	});
-    	function fontChange(clname, ele)
-    	{
-    		var liem = document.getElementsByTagName("li");
-    		for (var i = liem.length - 1; i >= 0; i--) {
-    			liem[i].className = "";
-    		};
-    		ele.className = "active";
-    		var el= document.getElementsByClassName("section");
-    		for (var i = el.length - 1; i > 1; i--) {
-    			el[i].className = clname+ " section";
-    		};
-    	}
 		</script>
 	</head>
-	<body onload="pageLoad(); nah();">
+	<body onload="">
 		<div class="section title" >
 			<h1>Google Hindi Web fonts</h1>
 			<p>Please review the text and if you have suggestions about the design of these fonts, or you see an error, select the text and right click. Select if your report is a bug or a suggestion, and then fill in the form. Your comments will be reported to the font designers.</p>
 		</div>
-		<div class="nav">
-			<ul>
-				<li class="active" onclick="fontChange('ekmukta', this);">Ek Mukta</li>
-				<li onclick="fontChange('notosans', this);">Noto Sans</li>
-				<li onclick="fontChange('teko', this);">Teko</li>
-				<li onclick="fontChange('hind', this);">Hind</li>
-				<li onclick="fontChange('karma', this);">Karma</li>
-				<li onclick="fontChange('kalam', this);">Kalam</li>
-				<li onclick="fontChange('rajdhani', this);">Rajdhani</li>
+		<div id="nav" class="nav">
+			<ul class="navul">
 			</ul>
 		</div>
 		<div class="heading section" title="green1"><span>Ek Mukta</span></div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Display 4</span>
 			<p class="text" style="font-size:700%; font-weight:300; line-height:150%;" ></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Display 3</span>
 			<p class="text" style="font-size:400%; line-height:200%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Display 2</span>
 			<p class="text" style="font-size:300%; line-height:200%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Display 1</span>
 			<p class="text" style="font-size:250%; line-height:200%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Headline</span>
 			<p class="text" style="font-size:200%; line-height:200%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Title</span>
 			<p class="text" style="font-size:150%; font-weight:500; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Subhead</span>
 			<p class="text" style="font-size:140%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span class="ekmukta">Body 2</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span>Body 1</span>
 			<p class="text" style="font-size:100%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span>Caption</span>
 			<p class="text" style="font-size:80%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span>Menu</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
-		<div class="ekmukta section" title="green2">
+		<div class="section" title="green2">
 			<span>Button</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
@@ -327,14 +321,6 @@
 					<div>
 						<label>Font Name: </label>
 						<select id="entry_1700713492" name="entry.1700713492">
-							<option value="">Font Name</option>
-							<option value="Ek Mukta">Ek Mukta</option>
-							<option value="Noto Sans">Noto Sans</option>
-							<option value="Hind">Hind</option>
-							<option value="Teko">Teko</option>
-							<option value="Karma">Karma</option>
-							<option value="Kalam">Kalam</option>
-							<option value="Rajdhani">Rajdhani</option>
 						</select>
 					</div>
 					<div>
