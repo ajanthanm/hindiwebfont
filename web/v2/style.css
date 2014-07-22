@@ -212,6 +212,10 @@
 			display:inline-block;
 			font-size:2em;
 			padding:1em;
+			width:60%;
+		}
+		.MobReportBox textarea {
+			box-sizing:border-box;
 		}
 
 		.mob-rightclick {
