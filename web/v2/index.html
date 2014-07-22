@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Google Hindi Font Tests</title>
+		<link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,300,500,600,700|Kalam:400,300,700|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900&subset=latin,devanagari' rel='stylesheet' type='text/css'>
+		<title>Test Google Hindi Fonts</title>
 		<meta charset="utf-8"/>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<link href='http://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,300,500,600,700|Kalam:400,300,700|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900&subset=latin,devanagari' rel='stylesheet' type='text/css'>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
@@ -245,7 +245,8 @@
 	</head>
 	<body onload="pageLoad(); nah();">
 		<div class="section title" >
-			Google Hind Web fonts
+			<h1>Google Hindi Web fonts</h1>
+			<p>Please review the text and if you have suggestions about the design of these fonts, or you see an error, select the text and right click. Select if your report is a bug or a suggestion, and then fill in the form. Your comments will be reported to the font designers.</p>
 		</div>
 		<div class="nav">
 			<ul>
@@ -312,19 +313,19 @@
 		</div>
 		<div class="mob-rightclick" id="mobrightclick" onclick="reportbug();">report bug</div>
 		<div class="reportbox" id="reportbox">
-			<div class="head">Report a Bug / Suggestion</div>
+			<div class="head">Report a Bug or Suggestion</div>
 			<div class="form">
 				<form id="ss-form" target="hiddeniframe" method="POST" action="https://docs.google.com/forms/d/1zkTfoEAo_crBxoR_CXhne5nd3ySh58FPt-9xuwLkkDA/formResponse">
 					<div>
-						<label>Tester Name</label>
-						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Enter your Name"  />
+						<label>Your Name:</label>
+						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Anonymous"  />
 					</div>
 					<div>
-						<label>OS and Platform</label>
-						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="Which OS and which Device?"/>
+						<label>Device and Browser:</label>
+						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="What kind of computer are you using?"/>
 					</div>
 					<div>
-						<label>Font Name</label>
+						<label>Font Name: </label>
 						<select id="entry_1700713492" name="entry.1700713492">
 							<option value="">Font Name</option>
 							<option value="Ek Mukta">Ek Mukta</option>
@@ -337,19 +338,19 @@
 						</select>
 					</div>
 					<div>
-						<label>Bug or Suggestion</label>
-						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug or Suggestion"/>
+						<label>Bug or Suggestion: </label>
+						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug"/>
 					</div>
 					<div>
-						<label>Reporting Text</label>
-						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Reporting Text" />
+						<label>Example Text: </label>
+						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Example Text" />
 					</div>
 					<div>
-						<label>Message</label>
-						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Message" />
+						<label>Describe what is wrong, exactly:</label>
+						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="Example: I think the letter धौं is too wide" />
 					</div>
 					<div>
-						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for Submiting the Report');" name="submit"/>
+						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for helping!');" name="submit"/>
 						<div onclick="closeReport();" class="closebutton">Close</div>
 					</div>
 				</form>
@@ -358,9 +359,9 @@
 		<div class="contextmenu" id="contextmenu">
 			<div class="wrapper" id="cwrapper" onclick="hideContextMenu();"></div>
 			<div class="menu">
-				<a onclick="hideContextMenu(); reportbug();">Report Bug</a><hr>
+				<a onclick="hideContextMenu(); reportbug();">Bug</a><hr>
 				<a onclick="hideContextMenu(); suggestion();">Suggestion</a><hr>
-				<a onclick="hideContextMenu();">close</a>
+				<a onclick="hideContextMenu();">Cancel</a>
 			</div>
 		</div>
 		<iframe src="" id="hiddeniframe" name="hiddeniframe"></iframe>
