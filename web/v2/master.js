@@ -62,6 +62,7 @@ function fontChange(clname, ele)
 	ele.className = "active";
 	var fname = $(ele).html();
 	$("#entry_1700713492").val(fname);
+	$(".heading").children("span").html(fname);
 	var el= document.getElementsByClassName("section");
 	for (var i = el.length - 1; i > 1; i--) {
 		el[i].className = clname+ " section";
