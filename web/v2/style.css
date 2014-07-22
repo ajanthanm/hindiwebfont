@@ -16,7 +16,7 @@ div.section {
 }
 
 div.nav {
-	background: white;
+	background: rgb(217, 245, 245);;
 	box-shadow: 0 0 10px;
 }
 
@@ -233,7 +233,19 @@ hr {
 	padding: 10px;
 }
 
+.reportbox textarea{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	padding: 10px;
+}
+
 .MobReportBox input {
+	display: inline-block;
+	font-size: 2em;
+	padding: 1em;
+}
+.MobReportBox textarea {
 	display: inline-block;
 	font-size: 2em;
 	padding: 1em;
