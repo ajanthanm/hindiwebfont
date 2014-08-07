@@ -41,19 +41,21 @@ function loadFont(){
 					document.getElementsByTagName("style")[0].innerHTML += "."+codename+"{"+fcss+"}";
 					if(i==7)
 					{
-						$(".navul").append('<li onclick="fontChange(\''+codename+'\', this);" class="active">'+fname+'</li>');	
+						$("#tab1").append('<option value="'+codename+'">'+fname+'</option>');
+						$("#tab2").append('<option value="'+codename+'">'+fname+'</option>');	
 						$(".section").addClass(codename);
 						$(".heading").children("span").text(fname);
 					}
 					else{
-						$(".navul").append('<li onclick="fontChange(\''+codename+'\', this);">'+fname+'</li>');
+						$("#tab1").append('<option value="'+codename+'">'+fname+'</option>');
+						$("#tab2").append('<option value="'+codename+'">'+fname+'</option>');
 					}
 					$("#entry_1700713492").append("<option value='"+fname+"'>"+fname+"</option>");
 					j=0;
 				}
 
 			}
-			$("#nav").prepend('<li class="navtwo"><a class="one active"></a><a class ="two" href="compare.html"></a></li>');
+			$("#nav").prepend('<li class="navtwo"><a class="one" href="index.html"></a><a class ="two active"></a></li>');
 		}
 	});
 }
@@ -79,16 +81,29 @@ function viewChange(viewtype, ele)
 	}*/
 
 }
-function fontChange(clname, ele)
+function fontChange(clname, tab)
 {
 	$("li").removeClass("active");
-	ele.className = "active";
-	var fname = $(ele).html();
+	if(tab == 1)
+	{
+		var fname = $("#tab1 option:selected").text();
+	}
+	else
+	{
+		var fname = $("#tab2 option:selected").text();
+	}
 	$("#entry_1700713492").val(fname);
-	$(".heading").children("span").html(fname);
+	//$(".heading").children("span").html(fname);
 	var el= document.getElementsByClassName("section");
 	for (var i = el.length - 1; i > 1; i--) {
-		el[i].className = clname+ " section";
+		if(tab == 1 && el[i].title == "tab1")
+		{
+			el[i].className = clname+ " section twoside";
+		}
+		else if(tab == 2 && el[i].title == "tab2")
+		{
+			el[i].className = clname+ " section twoside";
+		}
 	};
 }
 $(window).bind("load", function() {

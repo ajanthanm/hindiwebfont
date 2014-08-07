@@ -11,10 +11,14 @@
 			width: auto;
 			padding: 5% 10%; 
 			line-height: 200%;
+			min-width: 350px;
+			/*background: #FFFFFF;
+			color: #000000;*/
 		}
 		div.nav {
-			background:rgb(216, 249, 240);;
+			background:rgb(216, 249, 240);
 			box-shadow: 0 0 10px;
+			position: relative;
 		}
 		div.navfixed {
 			position: fixed;
@@ -32,10 +36,10 @@
 			width: auto;
 			margin:auto;
 			font-family: 'Roboto', 'sans-serif';
-			cursor: pointer;
 		}
-		div.nav li:hover {
+		div.nav li:hover:not(.navtwo) {
 			background: #7598bf;
+			cursor: pointer;
 			color: white;
 		}
 		div.nav li.active {
@@ -62,6 +66,12 @@
 		div.section[title="green5"] {
 			background: #4CB8CC;
 			color: black;
+		}
+		div.twoside {
+			display: inline-block;
+			width: 45.5%;
+			padding: 2%;
+			vertical-align: top;
 		}
 		.section span {
 			display: block;
@@ -272,6 +282,80 @@
 		.closebutton:hover {
 			background: #f8f8f8;
 		}
+		/* Toggle Button */
+		.navtwo {
+			height: 18px;
+			position:absolute;
+			top: 0;
+			right: 0;
+		}
+		.navtwo a {
+			display: inline-block;
+			width:29px;
+			height: 18px;
+			background: url("twoside");
+			cursor: pointer;
+			vertical-align: middle;
+		}
+		.navtwo .one {
+			background-position: left;
+			opacity: 0.5;
+		}
+		.navtwo .two {
+			background-position: right;
+			opacity: 0.5;
+		}
+		.navtwo .active {
+			opacity: 1;
+		}
+		#tab1, #tab2 {
+			background:transparent;
+			display: inline-block;
+			padding:0.75em 3em;
+			margin: auto;
+			border-radius: 0px;
+			-webkit-appearance: none;
+			-moz-appearance:none;
+			appearance:none;
+			background: #1e6062;
+			font-size: 1em;
+			color: white;
+			text-align: center;
+			outline: none;
+		}
+		#tab1:after, #tab2:after {
+			content: "";
+			display: block;
+			width:10px;
+			height: 10px;
+			position: absolute;
+			background: white;
+		}
+		#tab1 option, #tab2 option {
+			display: block;
+			text-align: center;
+		}
+		/* Toggle Button */
+		/* Two Side View */
+		.nav2view {
+			list-style: none;
+			height: 2.7em;
+			overflow: hidden;
+			display: inline-block;
+			vertical-align: top;
+			background: rgb(216, 249, 240);
+		}
+		.nav2view:hover {
+			overflow: visible;
+		}
+		.nav2view li {
+			display: block !important;
+			background: rgb(216, 249, 240);
+		}
+		#nav {
+			height: 2.7em;
+		}
+		/* Two Side View */
 		@media screen and (max-width: 640px) {
 			.reportbox form div {
 				display: inline-block;

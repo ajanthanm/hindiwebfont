@@ -9,7 +9,7 @@
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
-		<script type="text/javascript" src="master.js"></script>
+		<script type="text/javascript" src="compare.js"></script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -263,56 +263,118 @@
 			<ul class="navul">
 
 			</ul>
+			<select class="tab1" id="tab1" onchange="fontChange(this.value, 1);"></select>
+			<select class="tab2" id="tab2" onchange="fontChange(this.value, 2);"></select>
 		</div>
 		<div class="heading section" title="green1" style="display:none;"><span>Ek Mukta</span></div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Display 4 (Size 700%)</span>
 			<p class="text" style="font-size:700%; font-weight:300; line-height:150%;" ></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Display 4 (Size 700%)</span>
+			<p class="text" style="font-size:700%; font-weight:300; line-height:150%;" ></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Display 3 (Size 400%)</span>
 			<p class="text" style="font-size:400%; line-height:200%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Display 3 (Size 400%)</span>
+			<p class="text" style="font-size:400%; line-height:200%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Display 2 (Size 300%)</span>
 			<p class="text" style="font-size:300%; line-height:200%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Display 2 (Size 300%)</span>
+			<p class="text" style="font-size:300%; line-height:200%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Display 1 (Size 250%)</span>
 			<p class="text" style="font-size:250%; line-height:200%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Display 1 (Size 250%)</span>
+			<p class="text" style="font-size:250%; line-height:200%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Headline (Size 200%)</span>
 			<p class="text" style="font-size:200%; line-height:200%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Headline (Size 200%)</span>
+			<p class="text" style="font-size:200%; line-height:200%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Title (Size 150%)</span>
 			<p class="text" style="font-size:150%; font-weight:500; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Title (Size 150%)</span>
+			<p class="text" style="font-size:150%; font-weight:500; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Subhead (Size 140%)</span>
 			<p class="text" style="font-size:140%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Subhead (Size 140%)</span>
+			<p class="text" style="font-size:140%; font-weight:300; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span class="ekmukta">Body 2 (Size 100%)</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span class="ekmukta">Body 2 (Size 100%)</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span>Body 1 (Size 100%)</span>
 			<p class="text" style="font-size:100%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span>Body 1 (Size 100%)</span>
+			<p class="text" style="font-size:100%; font-weight:300; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span>Caption (Size 80%)</span>
 			<p class="text" style="font-size:80%; font-weight:300; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span>Caption (Size 80%)</span>
+			<p class="text" style="font-size:80%; font-weight:300; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span>Menu (Size 100%)</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
-		<div class="section" title="green2">
+		<div class="section twoside"  title="tab2">
+			<span>Menu (Size 100%)</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+		</div>
+
+		<div class="section twoside"  title="tab1">
 			<span>Button (Size 100%)</span>
 			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
 		</div>
+		<div class="section twoside"  title="tab2">
+			<span>Button (Size 100%)</span>
+			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+		</div>
+
 		<div class="prot" id="prot" style="display:none">
 			<input type="password" placeholder="Please enter your password" onchange="passCheck(this);" />
 		</div>
