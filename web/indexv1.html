@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700|Rajdhani:300,400,500,600,700|Teko:300,400,500,600,700|Noto+Sans:400,700,400italic,700italic|Khand:300,400,500,600,700|Ek+Mukta:200,300,400,500,600,700,800|Hind:400,500,600,300|Karma:400,300,500,600,700|Vesper+Libre:400,500,700,900|Kalam:400,300,700&amp;subset=latin,devanagari' rel='stylesheet' type='text/css'>
 		<title>Test Google Hindi Fonts</title>
 		<meta charset="utf-8"/>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -9,22 +10,8 @@
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style type="text/css">
 		</style>
-		<script type="text/javascript" src="master.js"></script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		  ga('create', 'UA-51508847-2', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
 		<script type="text/javascript">
 		var scrolled_val = 0;
-		var scrlval =0;
-		var navinit = 0;
-		var offset;
 		function pageLoad()
 		{
 			var nVer = navigator.appVersion;
@@ -107,7 +94,6 @@
 		var entry = "";
 		function nah()
 		{
-			loadFont();
 			$.ajax ({
 				url:"https://spreadsheets.google.com/feeds/cells/1qSk_BXLMSIOJqfUE7s-x5CbQwdy3v3eCqL4ywZPB69I/2/public/basic?alt=json-in-script",
 				type: "GET",
@@ -135,7 +121,7 @@
 			}
 			var el = document.getElementsByClassName("section");
 			for (var i = el.length - 1; i > 0; i--) {
-				el[i].getElementsByClassName("text")[0].innerHTML = entry;
+				el[i].innerHTML += entry;
 			};
 		}
 		var selectedtxt = "";
@@ -239,80 +225,56 @@
     		document.getElementById("reportbox").style.display = "none";
     	}
     	$(window).scroll( function() { 
-    		scrlval = $(document).scrollTop().valueOf();
-    		if(scrlval >= offset.top)
-    		{
-    			$("#nav").addClass("navfixed");
-    		}
-    		else
-    		{
-    			$("#nav").removeClass("navfixed");
-    		}
     		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-	 		scrolled_val = $(document).scrollTop().valueOf();
+	 	scrolled_val = $(document).scrollTop().valueOf();
 	 	}
 	});
+
 		</script>
 	</head>
-	<body onload="">
+	<body onload="pageLoad(); nah();">
 		<div class="section title" >
-			<h1>Google Hindi Web fonts</h1>
+			<h1>Google Fonts: Hindi</h1>
 			<p>Please review the text and if you have suggestions about the design of these fonts, or you see an error, select the text and right click. Select if your report is a bug or a suggestion, and then fill in the form. Your comments will be reported to the font designers.</p>
 		</div>
-		<div id="nav" class="nav">
-			<ul class="navul">
 
-			</ul>
+		<div class="section khand">
+			<span>Khand (Added 7/17)</span>
 		</div>
-		<div class="heading section" title="green1" style="display:none;"><span>Ek Mukta</span></div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Display 4 (Size 700%)</span>
-			<p class="text" style="font-size:700%; font-weight:300; line-height:150%;" ></p>
+
+		<div class="section vesper">
+			<span>Vesper Libre (Added 7/17)</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Display 3 (Size 400%)</span>
-			<p class="text" style="font-size:400%; line-height:200%;"></p>
+
+		<div class="ekmukta section">
+			<span>Ek Mukta</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Display 2 (Size 300%)</span>
-			<p class="text" style="font-size:300%; line-height:200%;"></p>
+
+		<div class="notosans section">
+			<span>Noto Sans</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Display 1 (Size 250%)</span>
-			<p class="text" style="font-size:250%; line-height:200%;"></p>
+
+		<div class="teko section">
+			<span>Teko</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Headline (Size 200%)</span>
-			<p class="text" style="font-size:200%; line-height:200%;"></p>
+
+		<div class="hind section">
+			<span>Hind</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Title (Size 150%)</span>
-			<p class="text" style="font-size:150%; font-weight:500; line-height:150%;"></p>
+		
+		<div class="karma section">
+			<span>Karma</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Subhead (Size 140%)</span>
-			<p class="text" style="font-size:140%; font-weight:300; line-height:150%;"></p>
+
+		<div class="kalam section">
+			<span>Kalam</span>
 		</div>
-		<div class="section" title="green2">
-			<span class="ekmukta">Body 2 (Size 100%)</span>
-			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
+
+		<div class="rajdhani section">
+			<span>Rajdhani</span>
 		</div>
-		<div class="section" title="green2">
-			<span>Body 1 (Size 100%)</span>
-			<p class="text" style="font-size:100%; font-weight:300; line-height:150%;"></p>
-		</div>
-		<div class="section" title="green2">
-			<span>Caption (Size 80%)</span>
-			<p class="text" style="font-size:80%; font-weight:300; line-height:150%;"></p>
-		</div>
-		<div class="section" title="green2">
-			<span>Menu (Size 100%)</span>
-			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
-		</div>
-		<div class="section" title="green2">
-			<span>Button (Size 100%)</span>
-			<p class="text" style="font-size:100%; font-weight:400; line-height:150%;"></p>
-		</div>
+
+
 		<div class="prot" id="prot" style="display:none">
 			<input type="password" placeholder="Please enter your password" onchange="passCheck(this);" />
 		</div>
@@ -326,29 +288,39 @@
 						<input type="text" id="entry_1270900088" name="entry.1270900088" value="" placeholder="Anonymous"  />
 					</div>
 					<div>
-						<label>Device and Browser:</label>
+						<label>Device and Browser<:/label>
 						<input type="text" id="entry_1467183824" name="entry.1467183824" value="" placeholder="What kind of computer are you using?"/>
 					</div>
 					<div>
-						<label>Font Name: </label>
+						<label>Font Name:</label>
 						<select id="entry_1700713492" name="entry.1700713492">
+							<option value="">Font Name</option>
+							<option value="Ek Mukta">Ek Mukta</option>
+							<option value="Noto Sans">Noto Sans</option>
+							<option value="Hind">Hind</option>
+							<option value="Teko">Teko</option>
+							<option value="Karma">Karma</option>
+							<option value="Kalam">Kalam</option>
+							<option value="Rajdhani">Rajdhani</option>
+							<option value="Khand">Khand</option>
+							<option value="Vesper Libre">Vesper Libre</option>
 						</select>
 					</div>
 					<div>
-						<label>Bug or Suggestion: </label>
+						<label>Bug or Suggestion</label>
 						<input type="text" name="entry.987646626" id="entry_987646626" value="" placeholder="Bug"/>
 					</div>
 					<div>
-						<label>Example Text: </label>
+						<label>Example Text:</label>
 						<input type="text" name="entry.750643813" id="entry_750643813" value="" placeholder="Example Text" />
 					</div>
 					<div>
 						<label>Describe what is wrong, exactly:</label>
-						<textarea name="entry.1327099886" id="entry_1327099886" placeholder="Example: I think the letter धौं is too wide" ></textarea>
+						<input type="text" name="entry.1327099886" id="entry_1327099886" value="" placeholder="xample: I think the letter धौं is too wide" />
 					</div>
 					<div>
 						<input id="ss-submit" type="submit" value="Submit" onclick="closeReport(); alert('Thanks for helping!');" name="submit"/>
-						<div onclick="closeReport();" class="closebutton">Close</div>
+						<div onclick="closeReport();" class="closebutton">Cancel</div>
 					</div>
 				</form>
 			</div>
